@@ -2,12 +2,9 @@ export SHELL := /bin/bash -euo pipefail
 export GOPATH := $(shell pwd)
 
 src/code.google.com/p/go.net:
-	go get code.google.com/p/go.net
+	go get -d code.google.com/p/go.net/websocket
 
-src/code.google.com/p/go.text:
-	go get code.google.com/p/go.text
-
-serve: src/code.google.com/p/go.net src/code.google.com/p/go.text
+serve: src/code.google.com/p/go.net
 	cd src/main && go run main.go
 
 clean:
